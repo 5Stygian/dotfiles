@@ -1,0 +1,11 @@
+# bools
+set autoindent
+set historylog
+set linenumbers
+set stateflags
+set tabstospaces
+
+# args
+set keycolor bold,lightmagenta,white
+set numbercolor bold,magenta,white
+set tabsize 4
