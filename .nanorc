@@ -6,6 +6,8 @@ set stateflags
 set tabstospaces
 
 # args
-set keycolor bold,lightmagenta,white
-set numbercolor bold,magenta,white
+set functioncolor lightmagenta
+set keycolor bold,red
+set numbercolor bold,magenta
 set tabsize 4
+set titlecolor bold,red,black
