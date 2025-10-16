@@ -7,7 +7,7 @@ I hope you enjoy the quirky characterizations I wrote for each command in the .b
 **Install:**  
 Download and run ``install.sh``.
 
-**Update:**
+**Update:**  
 Note: This command is in .bash_profile by default
 ```sh 
 updfs pull
