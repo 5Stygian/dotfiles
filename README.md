@@ -8,7 +8,7 @@ I hope you enjoy the quirky characterizations I wrote for each command in the .b
 Download and run ``install.sh``.
 
 **Update:**  
-Note: This command is in .bash_profile by default
+Note: This command is in .bash_profile so it is ran automatically every time you open a bash terminal
 ```sh 
 updfs pull
 ```
