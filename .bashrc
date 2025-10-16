@@ -73,7 +73,7 @@ updfsArgs=([1]="push" [0]="pull")
 updfs() {
     noArgs_EM="H-Hey...\nI think you forgot some args <.>\nM-Maybe you could give me some >,<\nAh! I remember! Here you go~\n*The furry creature hands you a sheet of paper. Written on it is a list of arguments you can give it*\n\n"
     wrongArg_EM="H-Hey...\nWhat do you mean by that~? O.O\n*The furry creature hands you a sheet of paper. Written on it is a list of arguments you can give it*\n\n"
-    noCommitMessage_EM="H-Hey...\nWhat do you want me to tell the guys upstairs ~_~\n*The furry creature hands you a sheet of paper. Written on it is the words \"You forgot a commit message silly!\"*"
+    noCommitMessage_EM="H-Hey...\nWhat do you want me to tell the guys upstairs ~_~\n*The furry creature hands you a sheet of paper. Written on it is the words \"You forgot a commit message, silly!\"*\n"
     if [ $# -eq 0 ]; then
         printf "${noArgs_EM}"
         printf "%s\n" "${updfsArgs[@]}"
