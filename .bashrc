@@ -17,6 +17,10 @@ export INPUTRC=~/.inputrc
 # 256 bit colors
 export TERM="xterm-256color"
 
+# command prompt
+# username | hostname | path from home (~/)
+#PS1="\033[197;1;0m\u\033[0m \033[15;1;0m|\033[0m \033[128;1;0m\H\033[0m \033[15;1;0m|\033[0m \033[20;1;0m\W\033[0m \033[15;1;0m~>\033[0m"
+
 # show dotfiles when running ls
 alias la="ls -a"
 
@@ -57,7 +61,7 @@ qnArgs=([2]="nrc" [1]="bp" [0]="brc")
 qn() {
     scbrchReminder_M="Hey bro, there's this cool guy named \"scbrch\" or something like that.\nHe can help you if you forget something.\n\n"
     noArgs_EM="Hey bro, this foo takes args, you got any?\nDid you forget them?\nDoesn't matter, here they are anyways.\n\n"
-    fileDoesntExist_EM="Hey bro, that .PLACEHOLDERrc file doesn't exist.\nWhy don't you make it exist?\nHere are the args in esac you forgot.\nDon't forget about me though, I live on line 57 if you wanna hang out some time.\n\n"
+    fileDoesntExist_EM="Hey bro, that .PLACEHOLDERrc file doesn't exist.\nWhy don't you make it exist?\nHere are the args in esac you forgot.\nDon't forget about me though, I live on line 61 if you wanna hang out some time.\n\n"
     if [ $# -eq 0 ]; then
         printf "${noArgs_EM}"
         printf "${scbrchReminder_M}"
@@ -223,7 +227,3 @@ scbrch() {
     # ending
     printf "${ending_M}"
 }
-
-# command prompt
-# username | hostname | path from home (~/)
-#PS1="\033[197;1;0m\u\033[0m \033[15;1;0m|\033[0m \033[128;1;0m\H\033[0m \033[15;1;0m|\033[0m \033[20;1;0m\W\033[0m \033[15;1;0m~>\033[0m"
