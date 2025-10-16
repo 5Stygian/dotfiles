@@ -82,7 +82,7 @@ updfs() {
     #noArgs_EM="H-Hey...\nI think you forgot some args... <.>\nM-Maybe you could give me some? >,<\nAh! I remember! Here you go~\n*The furry creature hands you a sheet of paper. Written on it is a list of arguments you can give it*\n\n"
     wrongArg_EM="H-Hey...\nOwO\nWhat do you mean by that~? O.O\n\n"
     #wrongArg_EM="H-Hey...\nOwO\nWhat do you mean by that~? O.O\n*The furry creature hands you a sheet of paper. Written on it is a list of arguments you can give it*\n\n"
-    noCommitMessage_EM="H-Hey...\nWhat do you want me to tell the guys upstairs? ~_~\n*The furry creature hands you a sheet of paper. Written on it are the words \"You forgot a commit message, silly!\"*\n"
+    noCommitMessage_EM="H-Hey...\nWhat do you want me to tell the guys upstairs ~_~\n*The furry creature hands you a sheet of paper. Written on it are the words \"You forgot a commit message, silly!\"*\n"
     if [ $# -eq 0 ]; then
         printf "${noArgs_EM}"
         printf "${scbrchReminder_M}"
@@ -134,10 +134,16 @@ updfs() {
 # read as "scib arch"
 scbrch() {
     sep="-"
+    sep_a="|"
     indent="    "
     doubleIndent="${indent}${indent}"
 
     intro_M="Good day to you, sire.\nI am your servant, scbrch.\n*The servant bows*\nHow may I be of your service today?\n*The servant pauses, awaiting your response.*\nOh, you want me to present to you your grimoire?\nRight away, my lord...\n*The servant scurries off to the grand library to retrieve your grimoire. He returns post haste.*\nHere you are, my lord.*The servant hands you the book, leaving the premises shortly after.*\n\n"
+
+    alias_M="================================ALIASES===============================\n\n"
+
+    la_M="la ${sep_a} ls -a ${sep_a} lists all files, including hidden files\n"
+    ch_M="ch ${sep_a} cd ~/ ${sep_a} cd to the active user directory\n"
 
     commands_M="===============================COMMANDS===============================\n\n"
 
@@ -148,6 +154,7 @@ scbrch() {
 
     fcd_M="fcd ${sep} fast cd\n"
     fcd_MA=(
+        "NOTE: la is on call"
         "NONE    ${sep} cd to the coding_projects directory"
         "py      ${sep} cd to the python directory"
         "bappdat ${sep} cd to the GlobboxZ_Compatabilities_Datapack directory"
@@ -173,18 +180,20 @@ scbrch() {
         "${indent}Requires a commit message to be passed as well"
     )
 
-    alias_M="================================ALIASES===============================\n\n"
-
-    la_M="la ${sep} ls -a ${sep} lists all files, including hidden files\n"
-    ch_M="ch ${sep} cd ~/ ${sep} cd to the active user directory\n"
-
     ending_M="======================================================================\n"
 
     # intro
     printf "${intro_M}"
-    printf "${commands_M}"
+
+    # ALIASES
+    printf "${alias_M}"
+    printf "${indent}${la_M}"
+    printf "${indent}${ch_M}"
+    printf "\n"
 
     # COMMANDS
+    printf "${commands_M}"
+
     ## scbrch
     printf "${scbrch_M}"
     printf "${indent}%s\n" "${scbrch_MA[@]}"
@@ -203,11 +212,6 @@ scbrch() {
     ## updfs
     printf "${updfs_M}"
     printf "${indent}%s\n" "${updfs_MA[@]}"
-
-    # ALIASES
-    printf "${alias_M}"
-    printf "${indent}${la_M}"
-    printf "${indent}${ch_M}"
     printf "\n"
 
     # ending
