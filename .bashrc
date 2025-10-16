@@ -94,8 +94,8 @@ updfs() {
                     echo "Changed directories"
                     git pull
                     echo "git pull complete"
-                    cp .nanorc ~/
-                    cp .bashrc ~/
+                    scp -v .nanorc ~/
+                    scp -v .bashrc ~/
                     echo "Dotfiles copied to ~/"
                     echo "Returning home..."
                     ch
@@ -103,8 +103,8 @@ updfs() {
                     source .nanorc
                     source .bashrc
                     echo "Pull complete"                 ;;
-            push)   cp .nanorc ~/coding_projects/dotfiles
-                    cp .bashrc ~/coding_projects/dotfiles
+            push)   scp -v .nanorc ~/coding_projects/dotfiles
+                    scp -v .bashrc ~/coding_projects/dotfiles
                     echo "Dotfiles copied"
                     fcd dfs
                     echo "Changed directories"
