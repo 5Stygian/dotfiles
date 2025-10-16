@@ -21,7 +21,7 @@ alias la="ls -a"
 alias ch="cd ~/"
 
 # short for "fast cd"
-# read as "f c d"
+# read as "f-c d"
 fcdArgs=([7]="py" [6]="bappdat" [5]="cpp" [4]="dfs" [3]="go" [2]="gdt" [1]="mc" [0]="web")
 fcd() {
     scbrchReminder_M="hey dumbfuck, just so you don't annoy me again, call this guy named \"scbrch\".\nhe can help you out with your fuckass memory problems.\n\n"
@@ -74,7 +74,7 @@ qn() {
 }
 
 # short for "update dotfiles"
-# read as "up d f s"
+# read as "up d f-s"
 updfsArgs=([1]="push" [0]="pull")
 updfs() {
     scbrchReminder_M="H-Hey...\nTh-There's this guy I know... -_-\nHis name's \"scbrch\", and he can help you out if you forget something! UwU\nW-Wait! Not that I think you will or whatever. >.<\nI'm just throwing it out there is all! @_@\nPlease don't hate me... v_v\n\n"
