@@ -14,6 +14,9 @@ shopt -s cmdhist
 # auto complete command from history
 export INPUTRC=~/.inputrc
 
+# 256 bit colors
+export TERM="xterm-256color"
+
 # show dotfiles when running ls
 alias la="ls -a"
 
