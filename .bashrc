@@ -225,4 +225,5 @@ scbrch() {
 }
 
 # command prompt
-#PS1="\u | \H | \W ~>"
+# username | hostname | path from home (~/)
+#PS1="\033[197;1;0m\u\033[0m \033[15;1;0m|\033[0m \033[128;1;0m\H\033[0m \033[15;1;0m|\033[0m \033[20;1;0m\W\033[0m \033[15;1;0m~>\033[0m"
