@@ -24,6 +24,7 @@ alias ch="cd ~/"
 # read as "f c d"
 fcdArgs=([7]="py" [6]="bappdat" [5]="cpp" [4]="dfs" [3]="go" [2]="gdt" [1]="mc" [0]="web")
 fcd() {
+    scbrchReminder_M="hey dumbfuck, just so you don't annoy me again, call this guy named \"scbrch\".\nhe can help you out with your fuckass memory problems.\n\n"
     dirDoesntExist_EM="hey dumbfuck! you know that arg you passed?\nyeah, well i don't have a FUCKING CLUE where the FUCK that is supposed to be.\nhere is a list of all the places i can take you, asshole.\n\n"
     if [ $# -eq 0 ]; then
         cd ~/coding_projects
@@ -41,28 +42,33 @@ fcd() {
             web)     cd ~/coding_projects/web;                               la ;;
 
             *)  printf "${dirDoesntExist_EM}"
-                printf "%s\n" "${fcdArgs[@]}"                                   ;;
+                printf "${scbrchReminder_M}"                                    ;;
+                #printf "%s\n" "${fcdArgs[@]}"                                   ;;
         esac
     fi
 }
 
 # short for "quick nano"
 # read as "q n"
-qnArgs=([1]="nrc" [0]="brc")
+qnArgs=([2]="nrc" [1]="bp" [0]="brc")
 qn() {
+    scbrchReminder_M="Hey bro, there's this cool guy named \"scbrch\" or something like that.\nHe can help you if you forget something.\n\n"
     noArgs_EM="Hey bro, this foo takes args, you got any?\nDid you forget them?\nDoesn't matter, here they are anyways.\n\n"
-    fileDoesntExist_EM="Hey bro, that .PLACEHOLDERrc file doesn't exist.\nWhy don't you make it exist?\nHere are the args in esac you forgot.\nDon't forget about me though, I live on line 52 if you wanna hang out some time.\n\n"
+    fileDoesntExist_EM="Hey bro, that .PLACEHOLDERrc file doesn't exist.\nWhy don't you make it exist?\nHere are the args in esac you forgot.\nDon't forget about me though, I live on line 54 if you wanna hang out some time.\n\n"
     if [ $# -eq 0 ]; then
         printf "${noArgs_EM}"
-        printf "%s\n" "${qnArgs[@]}"
+        printf "${scbrchReminder_M}"
+        #printf "%s\n" "${qnArgs[@]}"
         return
     else
         case "$1" in
             brc) nano .bashrc                ;;
+            bp)  nano .bash_profile          ;;
             nrc) nano .nanorc                ;;
 
             *)  printf "${fileDoesntExist_EM}"
-                printf "%s\n" "${qnArgs[@]}" ;;
+                printf "${scbrchReminder_M}" ;;
+                #printf "%s\n" "${qnArgs[@]}" ;;
         esac
     fi
 }
@@ -71,12 +77,16 @@ qn() {
 # read as "up d f s"
 updfsArgs=([1]="push" [0]="pull")
 updfs() {
-    noArgs_EM="H-Hey...\nI think you forgot some args <.>\nM-Maybe you could give me some >,<\nAh! I remember! Here you go~\n*The furry creature hands you a sheet of paper. Written on it is a list of arguments you can give it*\n\n"
-    wrongArg_EM="H-Hey...\nWhat do you mean by that~? O.O\n*The furry creature hands you a sheet of paper. Written on it is a list of arguments you can give it*\n\n"
-    noCommitMessage_EM="H-Hey...\nWhat do you want me to tell the guys upstairs ~_~\n*The furry creature hands you a sheet of paper. Written on it is the words \"You forgot a commit message, silly!\"*\n"
+    scbrchReminder_M="H-Hey...\nTh-There's this guy I know... -_-\nHis name's \"scbrch\", and he can help you out if you forget something! UwU\nW-Wait! Not that I think you will or whatever. >.<\nI'm just throwing it out there is all! @_@\nPlease don't hate me... v_v\n\n"
+    noArgs_EM="H-Hey...\nI think you forgot some args... <.>\nM-Maybe you could give me some? >,<\n\n"
+    #noArgs_EM="H-Hey...\nI think you forgot some args... <.>\nM-Maybe you could give me some? >,<\nAh! I remember! Here you go~\n*The furry creature hands you a sheet of paper. Written on it is a list of arguments you can give it*\n\n"
+    wrongArg_EM="H-Hey...\nOwO\nWhat do you mean by that~? O.O\n\n"
+    #wrongArg_EM="H-Hey...\nOwO\nWhat do you mean by that~? O.O\n*The furry creature hands you a sheet of paper. Written on it is a list of arguments you can give it*\n\n"
+    noCommitMessage_EM="H-Hey...\nWhat do you want me to tell the guys upstairs? ~_~\n*The furry creature hands you a sheet of paper. Written on it are the words \"You forgot a commit message, silly!\"*\n"
     if [ $# -eq 0 ]; then
         printf "${noArgs_EM}"
-        printf "%s\n" "${updfsArgs[@]}"
+        printf "${scbrchReminder_M}"
+        #printf "%s\n" "${updfsArgs[@]}"
         return
     else
         case "$1" in
@@ -88,7 +98,11 @@ updfs() {
                     cp .bashrc ~/
                     echo "Dotfiles copied to ~/"
                     echo "Returning home..."
-                    ch                                    ;;
+                    ch
+                    echo "Sourcing dotfiles"
+                    source .nanorc
+                    source .bashrc
+                    echo "Pull complete"                 ;;
             push)   cp .nanorc ~/coding_projects/dotfiles
                     cp .bashrc ~/coding_projects/dotfiles
                     echo "Dotfiles copied"
@@ -106,10 +120,96 @@ updfs() {
                     git push
                     echo "Files pushed"
                     echo "Returning home..."
-                    ch                                    ;;
+                    ch
+                    echo "Push complete"                 ;;
 
            *)  printf "${wrongArg_EM}"
-               printf "%s\n" "${updfsArgs[@]}"            ;;
+               printf "${scbrchReminder_M}"              ;;
+               #printf "%s\n" "${updfsArgs[@]}"            ;;
        esac
     fi
+}
+
+# short for "stygians custom .bashrc help"
+# read as "scib arch"
+scbrch() {
+    sep="-"
+    indent="    "
+    doubleIndent="${indent}${indent}"
+
+    intro_M="Good day to you, sire.\nI am your servant, scbrch.\n*The servant bows*\nHow may I be of your service today?\n*The servant pauses, awaiting your response.*\nOh, you want me to present to you your grimoire?\nRight away, my lord...\n*The servant scurries off to the grand library to retrieve your grimoire. He returns post haste.*\nHere you are, my lord.*The servant hands you the book, leaving the premises shortly after.*\n\n"
+
+    commands_M="===============================COMMANDS===============================\n\n"
+
+    scbrch_M="scbrch ${sep} Sytgians custom .bashrc help\n"
+    scbrch_MA=(
+        "list all commands and their respective arguments"
+    )
+
+    fcd_M="fcd ${sep} fast cd\n"
+    fcd_MA=(
+        "NONE    ${sep} cd to the coding_projects directory"
+        "py      ${sep} cd to the python directory"
+        "bappdat ${sep} cd to the GlobboxZ_Compatabilities_Datapack directory"
+        "cpp     ${sep} cd to the C++ directroy"
+        "dfs     ${sep} cd to the dotfiles directory"
+        "go      ${sep} cd to the go directroy"
+        "gdt     ${sep} cd to the godot directory"
+        "mc      ${sep} cd to the minecraft directory"
+        "web     ${sep} cd to the web directory"
+    )
+
+    qn_M="qn ${sep} quick nano\n"
+    qn_MA=(
+        "brc ${sep} open .bashrc in nano"
+        "bp  ${sep} open .bash_profile in nano"
+        "nrc ${sep} open .nanorc in nano"
+    )
+
+    updfs_M="updfs ${sep} update dotfiles\n"
+    updfs_MA=(
+        "pull ${sep} pull all relevent dotfiles and copy them to ~/"
+        "push ${sep} copy all relevent dotfiles and push them to github"
+        "${indent}Requires a commit message to be passed as well"
+    )
+
+    alias_M="================================ALIASES===============================\n\n"
+
+    la_M="la ${sep} ls -a ${sep} lists all files, including hidden files\n"
+    ch_M="ch ${sep} cd ~/ ${sep} cd to the active user directory\n"
+
+    ending_M="======================================================================\n"
+
+    # intro
+    printf "${intro_M}"
+    printf "${commands_M}"
+
+    # COMMANDS
+    ## scbrch
+    printf "${scbrch_M}"
+    printf "${indent}%s\n" "${scbrch_MA[@]}"
+    printf "\n"
+
+    ## fcd
+    printf "${fcd_M}"
+    printf "${indent}%s\n" "${fcd_MA[@]}"
+    printf "\n"
+
+    ## qn
+    printf "${qn_M}"
+    printf "${indent}%s\n" "${qn_MA[@]}"
+    printf "\n"
+
+    ## updfs
+    printf "${updfs_M}"
+    printf "${indent}%s\n" "${updfs_MA[@]}"
+
+    # ALIASES
+    printf "${alias_M}"
+    printf "${indent}${la_M}"
+    printf "${indent}${ch_M}"
+    printf "\n"
+
+    # ending
+    printf "${ending_M}"
 }
