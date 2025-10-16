@@ -103,9 +103,10 @@ updfs() {
                     echo "Dotfiles copied to ~/"
                     echo "Returning home..."
                     ch
-                    echo "Sourcing dotfiles"
-                    source .nanorc
-                    source .bashrc
+                    echo "Sourcing dotfiles..."
+                    source ~/.nanorc
+                    source ~/.bashrc
+                    source ~/.bash_profile
                     echo "Pull complete"                 ;;
             push)   scp -v .nanorc ~/coding_projects/dotfiles
                     scp -v .bashrc ~/coding_projects/dotfiles
