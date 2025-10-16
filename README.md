@@ -4,17 +4,11 @@ I hope you enjoy the quirky characterizations I wrote for each command in the .b
 
 2:08 AM Edit: I just realized I spend 7-9 hours editing a .bashrc...
 
-**Install:**  
-Note: This only works if you make that directory until I make it so you don't have to.
-```sh
-mkdir coding_projects
-cd coding_projects
-git clone https://github.com/5Stygian/dotfiles.git
-cd ~
-updfs pull
-```
+**Install:**
+Download and run ``install.sh``.
 
 **Update:**
+Note: This command is in .bash_profile by default
 ```sh 
 updfs pull
 ```
