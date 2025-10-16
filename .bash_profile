@@ -8,4 +8,6 @@ fi
 
 cd ~
 
+updfs pull
+
 fastfetch
