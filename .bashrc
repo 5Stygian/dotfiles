@@ -96,6 +96,7 @@ updfs() {
                     echo "git pull complete"
                     scp -v .nanorc ~/
                     scp -v .bashrc ~/
+                    scp -v .bash_profile ~/
                     echo "Dotfiles copied to ~/"
                     echo "Returning home..."
                     ch
@@ -105,6 +106,7 @@ updfs() {
                     echo "Pull complete"                 ;;
             push)   scp -v .nanorc ~/coding_projects/dotfiles
                     scp -v .bashrc ~/coding_projects/dotfiles
+                    scp -v .bash_profile ~/coding_projects/dotfiles
                     echo "Dotfiles copied"
                     fcd dfs
                     echo "Changed directories"
