@@ -4,12 +4,11 @@ I hope you enjoy the quirky characterizations I wrote for each command in the .b
 
 2:08 AM Edit: I just realized I spend 7-9 hours editing a .bashrc...
 
-**Install:**
+**Install:**.  
 Download and run ``install.sh``. **UNTESTED**  
 Note: This is only tested on Windows 11 Git Bash
 
 **Update:**  
-Note: This command is in .bash_profile so it is ran automatically every time you open a bash terminal
 ```sh 
 updfs pull
 ```
