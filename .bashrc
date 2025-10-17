@@ -19,7 +19,7 @@ export TERM="xterm-256color"
 
 # command prompt
 # username | hostname | path from home (~/)
-#PS1="\033[197;1;0m\u\033[0m \033[15;1;0m|\033[0m \033[128;1;0m\H\033[0m \033[15;1;0m|\033[0m \033[20;1;0m\W\033[0m \033[15;1;0m~>\033[0m"
+PS1="\033[197;1;0m\u\033[0m \033[15;1;0m|\033[0m \033[128;1;0m\H\033[0m \033[15;1;0m|\033[0m \033[20;1;0m\W\033[0m \033[15;1;0m~>\033[0m"
 
 # show dotfiles when running ls
 alias la="ls -a"
