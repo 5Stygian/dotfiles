@@ -7,10 +7,10 @@ install() {
     scp -v ~/coding_projects/dotfiles/.bash_profile
     scp -v ~/coding_projects/dotfiles/.bashrc
     scp -v ~/coding_projects/dotfiles/.nanorc
+    cd ~
     echo "Sourcing..."
     source ~/.bash_profile
     source ~/.bashrc
     source ~/.nanorc
     echo "Sourcing complete"
-    cd ~
 }
