@@ -1,3 +1,5 @@
+cd ~
+
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
@@ -5,8 +7,6 @@ fi
 if [ -f ~/.nanorc ]; then
     source ~/.nanorc
 fi
-
-cd ~
 
 #updfs pull
 
