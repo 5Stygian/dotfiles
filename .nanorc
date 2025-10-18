@@ -13,12 +13,12 @@ set tabsize 4
 set titlecolor bold,red,black
 
 # syntax highlighting for python
-#syntax python "\.py$"
-#color red "bool|True|False|None|="
-#color lightred "def|class|imoport|from|as|yield|return|with"
-#color orange "if|elif|else|while|for|in|match|case|try|except"
-#color lightorange "lambda"
-#color yellow "break|continue|pass"
-#color lightyellow "int|float|str"
-#color lightblue "and|or|not|is|==|!=|<|>|<=|>=|\|\||\&\&|"
-#color lightmagenta "global|nonlocal"
+syntax python "\.py$"
+color red "bool|True|False|None|="
+color lightred "def|class|imoport|from|as|yield|return|with"
+color orange "if|elif|else|while|for|in|match|case|try|except"
+color yellow "break|continue|pass"
+color lightyellow "int|float|str"
+color lightgreen "lambda"
+color lightblue "and|or|not|is|==|!=|<|>|<=|>=|\|\||\&\&|"
+color lightmagenta "global|nonlocal"
