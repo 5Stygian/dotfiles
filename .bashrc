@@ -19,7 +19,8 @@ export TERM="xterm-256color"
 
 # command prompt
 # hostname | username | path from home (~/) | prompt
-PS1="\n\033[197;1;0m\h\033[0m \033[15;1;0m|\033[0m \033[128;1;0m\u\033[0m \033[15;1;0m|\033[0m \033[20;1;0m\W\033[0m \033[15;1;0m~>\033[0m \$\n"
+# commenting this out beacuse the coloring doesnt work. maybe ill ask chatgpt to help me fix this
+#export PS1="\n\033[38;5;198m\h\033[0m \033[15;1;0m|\033[0m \033[38;5;164m\u\033[0m \033[15;1;0m|\033[0m \033[38;5;15m\w\033[0m \033[15;1;0m~>\033[0m \$\n"
 
 # show dotfiles when running ls
 alias la="ls -a"
@@ -163,6 +164,8 @@ qg() {
     fi
 }
 
+
+
 # short for "stygians custom .bashrc help"
 # read as "scib arch"
 scbrch() {
@@ -175,8 +178,10 @@ scbrch() {
 
     alias_M="================================ALIASES===============================\n\n"
 
-    la_M="la ${sep_a} ls -a ${sep_a} lists all files, including hidden files\n"
-    ch_M="ch ${sep_a} cd ~/ ${sep_a} cd to the active user directory\n"
+    alias_MA=(
+        "la ${sep_a} ls -a ${sep_a} lists all files, including hidden files\n"
+        "ch ${sep_a} cd ~/ ${sep_a} cd to the active user directory\n"
+    )
 
     commands_M="===============================COMMANDS===============================\n\n"
 
@@ -187,8 +192,8 @@ scbrch() {
 
     fcd_M="fcd ${sep} fast cd\n"
     fcd_MA=(
-        "NOTE: la is on call"
-        "NONE    ${sep} cd to the coding_projects directory"
+        "NOTE: la is ran on call"
+        "<NONE>  ${sep} cd to the coding_projects directory"
         "py      ${sep} cd to the python directory"
         "bappdat ${sep} cd to the GlobboxZ_Compatabilities_Datapack directory"
         "cpp     ${sep} cd to the C++ directroy"
@@ -226,8 +231,7 @@ scbrch() {
 
     # ALIASES
     printf "${alias_M}"
-    printf "${indent}${la_M}"
-    printf "${indent}${ch_M}"
+    printf "%s\n" "${alias_MA}"
     printf "\n"
 
     # COMMANDS
