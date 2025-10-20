@@ -20,7 +20,7 @@ export TERM=xterm-256color
 # command prompt
 # hostname | username | path from home (~/) | prompt
 # commenting this out beacuse the coloring doesnt work. maybe ill ask chatgpt to help me fix this
-#export PS1="\n\033[38;5;198m\h\033[0m \033[15;1;0m|\033[0m \033[38;5;164m\u\033[0m \033[15;1;0m|\033[0m \033[38;5;15m\w\033[0m \033[15;1;0m~>\033[0m \$\n"
+export PS1="\n\033[38;5;198m\h\033[0m \033[15;1;0m|\033[0m \033[38;5;164m\u\033[0m \033[15;1;0m|\033[0m \033[38;5;15m\w\033[0m \033[15;1;0m~>\033[0m \$\n"
 
 # show dotfiles when running ls
 alias la="ls -a"
