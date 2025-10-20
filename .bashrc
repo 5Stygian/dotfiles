@@ -140,6 +140,20 @@ updfs() {
     fi
 }
 
+# short for quick git"
+read as "q g"
+qgArgs=()
+qg() {
+    if [ $# -eq 0 ]; then
+        echo "no args :("
+        return
+    fi
+    case "$1" in
+    
+
+        *) echo "not an arg :(" ;;
+}
+
 # short for "stygians custom .bashrc help"
 # read as "scib arch"
 scbrch() {
