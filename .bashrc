@@ -15,7 +15,7 @@ shopt -s cmdhist
 export INPUTRC=~/.inputrc
 
 # 256 bit colors
-export TERM="xterm-256color"
+export TERM=xterm-256color
 
 # command prompt
 # hostname | username | path from home (~/) | prompt
