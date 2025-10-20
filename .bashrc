@@ -121,6 +121,7 @@ updfs() {
                     git add .
                     echo "Files added"
                     if [ "$2" == "" ]; then
+                        git restore --staged .
                         printf "${noCommitMessage_EM}"
                         return
                     else
@@ -150,7 +151,9 @@ qg() {
         return
     fi
     git add .
+    echo files added
     if [ "$1" == "" ]; then
+        git restore --staged .
         printf "${noCommitMessage_EM}"
         return
     else
