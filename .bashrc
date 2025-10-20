@@ -151,7 +151,7 @@ qg() {
         return
     fi
     git add .
-    echo files added
+    echo "files added"
     if [ "$1" == "" ]; then
         git restore --staged .
         printf "${noCommitMessage_EM}"
@@ -159,6 +159,7 @@ qg() {
     else
         git commit -m "$1"
         git push
+        echo "push complete"
     fi
 }
 
