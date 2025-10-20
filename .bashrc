@@ -140,18 +140,23 @@ updfs() {
     fi
 }
 
-# short for quick git"
-read as "q g"
-qgArgs=()
+# short for "quick git"
+# read as "q g"
 qg() {
+    noArgs_EM="hey, i take an arg btw\n\n"
+    noCommitMesage_EM="hey, the boss needs a note, bro\n\n"
     if [ $# -eq 0 ]; then
-        echo "no args :("
+        printf "${noArgs_EM}"
         return
     fi
-    case "$1" in
-    
-
-        *) echo "not an arg :(" ;;
+    git add .
+    if [ "$1" == "" ]; then
+        printf "${noCommitMessage_EM}"
+        return
+    else
+        git commit -m "$1"
+        git push
+    fi
 }
 
 # short for "stygians custom .bashrc help"
@@ -204,6 +209,12 @@ scbrch() {
         "${indent}Requires a commit message to be passed as well"
     )
 
+    qg_M="qg ${sep} quick git\n"
+    qg_MA=(
+        "Only use when in a git repository"
+        "Requires a commit message"
+    )
+
     ending_M="======================================================================\n"
 
     # intro
@@ -236,6 +247,11 @@ scbrch() {
     ## updfs
     printf "${updfs_M}"
     printf "${indent}%s\n" "${updfs_MA[@]}"
+    printf "\n"
+
+    ## qg
+    printf "${qg_M}"
+    printf "${indent}%s\n" "${qg_MA[@]}"
     printf "\n"
 
     # ending
