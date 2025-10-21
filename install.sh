@@ -10,6 +10,5 @@ install() {
     cd ~
     echo "Sourcing..."
     source ~/.bashrc
-    source ~/.nanorc
     echo "Sourcing complete"
 }
