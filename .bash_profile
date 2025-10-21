@@ -6,4 +6,6 @@ cd ~
 
 updfs pull
 
+clear
+
 fastfetch
