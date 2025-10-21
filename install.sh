@@ -11,4 +11,6 @@ install() {
     echo "Sourcing..."
     source ~/.bashrc
     echo "Sourcing complete"
+    rm ~/install.sh
+    echo "Install conplete"
 }
