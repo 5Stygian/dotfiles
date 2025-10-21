@@ -18,8 +18,9 @@ export INPUTRC=~/.inputrc
 export TERM=xterm-256color
 
 # command prompt
-# hostname | username | path from home (~/) | prompt
-export PS1="\n\033[38;5;198m\h\033[0m \033[38;5;15m|\033[0m \033[38;5;164m\u\033[0m \033[38;5;15m|\033[0m \033[38;5;27m\w\033[0m \033[38;5;15m~>\033[0m \$\n"
+# hostname | username | path from home (~/) | cool squiggly thingy | prompt
+## bisexual colors
+export PS1="\n\033[38;5;198m\h\033[0m \033[38;5;201m|\033[0m \033[38;5;90m\u\033[0m \033[38;5;33m|\033[0m \033[38;5;27m\w\033[0m \033[38;5;15m~>\033[0m \$\n"
 
 # show dotfiles when running ls
 alias la="ls -a"
@@ -61,7 +62,7 @@ qnArgs=([2]="nrc" [1]="bp" [0]="brc")
 qn() {
     scbrchReminder_M="Hey bro, there's this cool guy named \"scbrch\" or something like that.\nHe can help you if you forget something.\n\n"
     noArgs_EM="Hey bro, this foo takes args, you got any?\nDid you forget them?\nDoesn't matter, here they are anyways.\n\n"
-    fileDoesntExist_EM="Hey bro, that .PLACEHOLDERrc file doesn't exist.\nWhy don't you make it exist?\nHere are the args in esac you forgot.\nDon't forget about me though, I live on line 61 if you wanna hang out some time.\n\n"
+    fileDoesntExist_EM="Hey bro, that .PLACEHOLDERrc file doesn't exist.\nWhy don't you make it exist?\nHere are the args in esac you forgot.\nDon't forget about me though, I live on line 62 if you wanna hang out some time.\n\n"
     if [ $# -eq 0 ]; then
         printf "${noArgs_EM}"
         printf "${scbrchReminder_M}"
@@ -69,9 +70,9 @@ qn() {
         return
     else
         case "$1" in
-            brc) nano .bashrc                ;;
-            bp)  nano .bash_profile          ;;
-            nrc) nano .nanorc                ;;
+            brc) ch; nano .bashrc                ;;
+            bp)  ch; nano .bash_profile          ;;
+            nrc) ch; nano .nanorc                ;;
 
             *)  printf "${fileDoesntExist_EM}"
                 printf "${scbrchReminder_M}" ;;
@@ -97,7 +98,8 @@ updfs() {
         return
     else
         case "$1" in
-            pull)   fcd dfs
+            pull)   ch
+                    fcd dfs
                     echo "Changed directories"
                     git pull
                     echo "git pull complete"
@@ -110,7 +112,8 @@ updfs() {
                     echo "Sourcing dotfiles..."
                     source ~/.bashrc
                     echo "Pull complete"                 ;;
-            push)   scp -v .nanorc ~/coding_projects/dotfiles
+            push)   ch
+                    scp -v .nanorc ~/coding_projects/dotfiles
                     scp -v .bashrc ~/coding_projects/dotfiles
                     scp -v .bash_profile ~/coding_projects/dotfiles
                     echo "Dotfiles copied"
