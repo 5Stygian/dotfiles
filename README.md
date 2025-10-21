@@ -5,7 +5,8 @@ I hope you enjoy the quirky characterizations I wrote for each command in the .b
 2:08 AM Edit: I just realized I spend 7-9 hours editing a .bashrc...
 
 **Install:**.  
-Download, source, and run ``install.sh``.  
+Download, source, and run ``install.sh`` in your home directory.  
+It will automatically delete itself after completing. You may need to relaunch your terminal.
 Note: This is only tested on Windows 11 Git Bash
 
 **Update:**  
