@@ -176,8 +176,8 @@ scbrch() {
     alias_M="================================ALIASES===============================\n\n"
 
     alias_MA=(
-        "la ${sep_a} ls -a ${sep_a} lists all files, including hidden files\n"
-        "ch ${sep_a} cd ~/ ${sep_a} cd to the active user directory\n"
+        "la ${sep_a} ls -a ${sep_a} lists all files, including hidden files"
+        "ch ${sep_a} cd ~/ ${sep_a} cd to the active user directory"
     )
 
     commands_M="===============================COMMANDS===============================\n\n"
@@ -228,7 +228,7 @@ scbrch() {
 
     # ALIASES
     printf "${alias_M}"
-    printf "%s\n" "${alias_MA}"
+    printf "%s\n" "${alias_MA[@]}"
     printf "\n"
 
     # COMMANDS
