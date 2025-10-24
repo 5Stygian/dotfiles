@@ -24,7 +24,8 @@ randps() {
     if [[ $number -ge 0 && $number -le 4 ]]; then
         ## bisexual colors
         export PS1="\n\033[38;5;198m\h\033[0m \033[38;5;201m|\033[0m \033[38;5;90m\u\033[0m \033[38;5;33m|\033[0m \033[38;5;27m\w\033[0m \033[38;5;15m~>\033[0m \$\n"
-    elif [[ $number -ge 5 && $number -le 9 ]]; then
+    fi
+    if [[ $number -ge 5 && $number -le 9 ]]; then
         ## pride colors
         export PS1="\n\033[38;5;196m\h\033[0m \033[38;5;202m|\033[0m \033[38;5;220m\u\033[0m \033[38;5;46m|\033[0m \033[38;5;19m\w\033[0m \033[38;5;128m~>\033[0m \$\n"
     fi
