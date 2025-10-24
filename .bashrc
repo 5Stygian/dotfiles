@@ -19,6 +19,7 @@ export TERM=xterm-256color
 
 # random command prompt colors
 # hostname | username | path from home (~/) | cool squiggly thingy | prompt
+# read as "rand p s"
 randps() {
     number=$((1 + $RANDOM % 10))
     if [[ $number -ge 0 && $number -le 4 ]]; then
@@ -71,7 +72,7 @@ qnArgs=([2]="nrc" [1]="bp" [0]="brc")
 qn() {
     scbrchReminder_M="Hey bro, there's this cool guy named \"scbrch\" or something like that.\nHe can help you if you forget something.\n\n"
     noArgs_EM="Hey bro, this foo takes args, you got any?\nDid you forget them?\nDoesn't matter, here they are anyways.\n\n"
-    fileDoesntExist_EM="Hey bro, that .PLACEHOLDERrc file doesn't exist.\nWhy don't you make it exist?\nHere are the args in esac you forgot.\nDon't forget about me though, I live on line 62 if you wanna hang out some time.\n\n"
+    fileDoesntExist_EM="Hey bro, that .PLACEHOLDERrc file doesn't exist.\nWhy don't you make it exist?\nHere are the args in esac you forgot.\nDon't forget about me though, I live on line 71 if you wanna hang out some time.\n\n"
     if [ $# -eq 0 ]; then
         printf "${noArgs_EM}"
         printf "${scbrchReminder_M}"
@@ -233,6 +234,11 @@ scbrch() {
         "Requires a commit message"
     )
 
+    randps_M="randps ${sep} random PS1\n"
+    randps_MA=(
+        "Does not take any args. It is ran in .bash_profile"
+    )
+
     ending_M="======================================================================\n"
 
     # intro
@@ -269,6 +275,11 @@ scbrch() {
     ## qg
     printf "${qg_M}"
     printf "${indent}%s\n" "${qg_MA[@]}"
+    printf "\n"
+
+    ## randps
+    printf "${randps_M}"
+    printf "${indent}%s\n" "${randps_MA}"
     printf "\n"
 
     # ending

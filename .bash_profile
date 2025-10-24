@@ -6,8 +6,8 @@ cd ~
 
 updfs pull
 
-randps
-
 clear
+
+randps
 
 fastfetch
