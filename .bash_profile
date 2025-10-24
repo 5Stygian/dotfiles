@@ -6,6 +6,8 @@ cd ~
 
 updfs pull
 
+randps
+
 clear
 
 fastfetch
