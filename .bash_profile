@@ -11,3 +11,5 @@ clear
 randps
 
 fastfetch
+
+echo "Hi mom!"
