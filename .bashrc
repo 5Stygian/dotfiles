@@ -58,7 +58,7 @@ fcd() {
             gdt)     cd ~/coding_projects/godot;                             la ;;
             mc)      cd ~/coding_projects/minecraft;                         la ;;
             web)     cd ~/coding_projects/web;                               la ;;
-            rs)      cd !/coding_projects/rust;                              la ;;
+            rs)      cd ~/coding_projects/rust;                              la ;;
 
             *)  printf "${dirDoesntExist_EM}"
                 printf "${scbrchReminder_M}"                                    ;;
