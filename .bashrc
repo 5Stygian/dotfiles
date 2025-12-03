@@ -58,6 +58,7 @@ fcd() {
             gdt)     cd ~/coding_projects/godot;                             la ;;
             mc)      cd ~/coding_projects/minecraft;                         la ;;
             web)     cd ~/coding_projects/web;                               la ;;
+            rs)      cd !/coding_projects/rust;                              la ;;
 
             *)  printf "${dirDoesntExist_EM}"
                 printf "${scbrchReminder_M}"                                    ;;
@@ -212,6 +213,7 @@ scbrch() {
         "gdt     ${sep} cd to the godot directory"
         "mc      ${sep} cd to the minecraft directory"
         "web     ${sep} cd to the web directory"
+        "rs      ${sep} cd to the rust directory"
     )
 
     qn_M="qn ${sep} quick nano\n"
