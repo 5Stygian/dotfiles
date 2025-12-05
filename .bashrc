@@ -112,7 +112,7 @@ updfs() {
             pull)   ch
                     fcd dfs
                     echo "Changed directories"
-                    git pull
+                    git pull -v
                     echo "git pull complete"
                     scp -v .nanorc ~/
                     scp -v .bashrc ~/
@@ -137,10 +137,10 @@ updfs() {
                         printf "${noCommitMessage_EM}"
                         return
                     else
-                        git commit -m "$2"
+                        git commit -v -m "$2"
                     fi
                     echo "Commit message sent"
-                    git push
+                    git push -v
                     echo "Files pushed"
                     echo "Returning home..."
                     ch
@@ -169,12 +169,45 @@ qg() {
         printf "${noCommitMessage_EM}"
         return
     else
-        git commit -m "$1"
-        git push
+        git commit -v -m "$1"
+        git push -v
         echo "push complete"
     fi
 }
 
+# short for "new remote repository"
+# read as "n r r"
+nrr() {
+    noArgs_EM="oh darling~ i would love it if you would ARGue with me~\n"
+    noNewDirName_EM="i need to be told where to make this for you, darling~\n"
+    noRepoLink_EM="oh, you leave me clueless darling~\n"
+
+    newDir="$1"
+    if [ newDir == "" ]; then
+        printf "${noNewDirName_EM}"
+    fi
+
+    repoLink="$2"
+    if [ repoLink == "" ]; then
+        printf "${noRepoName_EM}"
+    fi
+
+    # actual logic time
+    if [ $# -eq 0 ]; then
+        printf "${noArgs_EM}"
+    else
+        mkdir "${newDir}"
+        cd "${newDir}"
+        git init
+        printf "# ${newDir}\n\n" >> README.md
+        la
+        git add .
+        git commit -v -m "init commit"
+        git branch -M main
+        git remote add origin "${repoLink}"
+        git push -v -u origin main
+    fi
+}
 
 
 # short for "stygians custom .bashrc help"
@@ -241,6 +274,12 @@ scbrch() {
         "Does not take any args. It is ran in .bash_profile"
     )
 
+    nrr_M="nrr ${sep} new remote repository\n"
+    nrr_MA=(
+        "1st ${sep} the name of the new directory"
+        "2nd ${sep} the link to the remote repository"
+    )
+
     ending_M="======================================================================\n"
 
     # intro
@@ -281,7 +320,12 @@ scbrch() {
 
     ## randps
     printf "${randps_M}"
-    printf "${indent}%s\n" "${randps_MA}"
+    printf "${indent}%s\n" "${randps_MA[@]}"
+    printf "\n"
+
+    ## nrr
+    printf "${nrr_M}"
+    printf "${indent}%s\n" "${nrr_MA[@]}"
     printf "\n"
 
     # ending
