@@ -23,6 +23,7 @@ updfs() {
                 echo "copying files..."
                 scp -v ~/.bash_profile ~/prog/dotfiles
                 scp -v ~/.bashrc ~/prog/dotfiles
+                scp -v ~/.config/fastfetch/config.jsonc ~/prog/dotfiles
                 cd ~/prog/dotfiles
                 git add .
                 git commit -m "$2"
@@ -36,6 +37,7 @@ updfs() {
             git pull -v
             scp -v ./.bash_profile ~/
             scp -v ./.bashrc ~/
+            scp -v ./config.jsonc ~/.config/fastfetch/config.jsonc
             cd
             source ~/.bashrc
             echo "Pull complete"
