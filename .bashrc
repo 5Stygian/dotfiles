@@ -29,6 +29,7 @@ updfs() {
                 git push -v
                 cd
             fi
+            echo "Push complete"
             ;;
         pull)
             cd ~/prog/dotfiles
@@ -37,6 +38,7 @@ updfs() {
             scp -v ./.bashrc ~/
             cd
             source ~/.bashrc
+            echo "Pull complete"
             ;;
     esac
 }
