@@ -13,6 +13,14 @@ alias grep='grep --color=auto'
 
 export PS1="\n\[\033[1m\033[32m\]─┬──┤ \[\033[37m\]\u@\h \[\033[32m\]├───┤ \[\033[37m\]\t \[\033[32m\]├───┤ \[\033[37m\]\#|\! \[\033[32m\]├───┤ \[\033[37m\]\w \[\033[32m\]│ \n\[\033[1m\] └───┤\[\033[37m\]\$\[\033[32m\]│ \[\033[0m\]"
 
+terminaltitle() {
+    readarray -t SCiPNET < ~/prog/dotfiles/bash-profile-echo.txt
+
+    echo
+    printf '%s\n' "${SCiPNET[@]}"
+    echo
+}
+
 updfs() {
     case "$1" in
         push)
