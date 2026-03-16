@@ -52,3 +52,13 @@ updfs() {
             ;;
     esac
 }
+
+qg() {
+    if [[ $# -eq 0 ]]; then
+        echo "Commit mesage needed"
+    else
+        git add .
+        git commit -m "$1"
+        git push -v
+    fi
+}
