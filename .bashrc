@@ -22,6 +22,11 @@ terminaltitle() {
 }
 
 updfs() {
+    if [[ $# -eq 0 ]]; then
+        echo "updfs [pull|push 'COMMIT_MSG']"
+        return
+    fi
+
     case "$1" in
         push)
             if [[ "$2" == "" ]]; then
