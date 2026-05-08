@@ -67,3 +67,5 @@ qg() {
         git push -v
     fi
 }
+
+. "$HOME/.var/app/com.vscodium.codium-insiders/data/../bin/env"
