@@ -4,7 +4,7 @@
     "type": "auto",
     "source": "~/prog/dotfiles/site-43-logo.txt", // made by Th3Catalyst
     "color": {
-      "1": "#222222",
+      "1": "#000000",
       "2": "#bb0011",
       "3": "#ff9900",
       "4": "#ffee00",
