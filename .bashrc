@@ -10,6 +10,7 @@ export TERM=xterm-256color
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias grep='grep --color=auto'
+alias larpfetch='fastfetch'
 
 export PS1="\n\[\033[1m\033[32m\]─┬──┤ \[\033[37m\]\u@\h \[\033[32m\]├───┤ \[\033[37m\]\t \[\033[32m\]├───┤ \[\033[37m\]\#|\! \[\033[32m\]├───┤ \[\033[37m\]\w \[\033[32m\]│ \n\[\033[1m\] └───┤\[\033[37m\]\$\[\033[32m\]│ \[\033[0m\]"
 
