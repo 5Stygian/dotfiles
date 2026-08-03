@@ -70,7 +70,32 @@ qg() {
 }
 
 tadds() {
-  ~/vns/TADDS-1.0-pc/TADDS.sh
+    ~/vns/TADDS-1.0-pc/TADDS.sh
+}
+
+cutil_genh() {
+    if [[ $# -eq 0 ]]; then
+        echo "File name needed"
+    else
+        FileName=$1
+        FilePath="$1.h"
+        FileContents="#ifndef __${FileName^^}_H
+#define __${FileName^^}_H
+
+#if defined(__cplusplus)
+extern \"C\" {
+#endif
+
+// FILE CONTENTS
+
+#if defined(__cplusplus)
+}
+#endif
+
+#endif // __${FileName^^}_H"
+        touch ${FilePath}
+        echo "${FileContents}" > ${FilePath}
+    fi
 }
 
 . "$HOME/.var/app/com.vscodium.codium-insiders/data/../bin/env"
