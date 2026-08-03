@@ -69,4 +69,8 @@ qg() {
     fi
 }
 
+tadds() {
+  ~/vns/TADDS-1.0-pc/TADDS.sh
+}
+
 . "$HOME/.var/app/com.vscodium.codium-insiders/data/../bin/env"
