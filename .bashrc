@@ -14,6 +14,8 @@ alias larpfetch='fastfetch'
 
 export PS1="\n\[\033[1m\033[32m\]─┬──┤ \[\033[37m\]\u@\h \[\033[32m\]├───┤ \[\033[37m\]\t \[\033[32m\]├───┤ \[\033[37m\]\#|\! \[\033[32m\]├───┤ \[\033[37m\]\w \[\033[32m\]│ \n\[\033[1m\] \[\033[1m\033[32m\]└───┤\[\033[37m\]\$\[\033[32m\]│ \[\033[0m\]"
 
+export PATH=$PATH:/usr/bin/c3c
+
 terminaltitle() {
     readarray -t SCiPNET < ~/prog/dotfiles/bash-profile-echo.txt
 
@@ -37,6 +39,7 @@ updfs() {
                 echo "copying files..."
                 scp -v ~/.bash_profile ~/prog/dotfiles
                 scp -v ~/.bashrc ~/prog/dotfiles
+                scp -v ~/.nanorc ~/prog/dotfiles
                 scp -v ~/.config/fastfetch/config.jsonc ~/prog/dotfiles
                 cd ~/prog/dotfiles
                 git add .
@@ -51,6 +54,7 @@ updfs() {
             git pull -v
             scp -v ./.bash_profile ~/
             scp -v ./.bashrc ~/
+            scp -v ./.nanorc ~/
             scp -v ./config.jsonc ~/.config/fastfetch/config.jsonc
             cd
             source ~/.bashrc
